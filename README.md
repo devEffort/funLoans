@@ -1,6 +1,6 @@
 **Solution**
 
-*1*. How long did you spend working on the problem? What did you find to be the most difficult part?
+***1*. How long did you spend working on the problem? What did you find to be the most difficult part?**
 
 
 The first working solution took close to 4 hours. It was a combination of getting the code right as well as making sure the CSV representations were figured out. 
@@ -13,7 +13,7 @@ I spent time at the beginning, to figure out the best data representation (in fo
 
 
 
-*2*. How would you modify your data model or code to account for an eventual introduction of new, as-of-yet unknown types of covenants, beyond just maximum default likelihood and state restrictions?
+***2*. How would you modify your data model or code to account for an eventual introduction of new, as-of-yet unknown types of covenants, beyond just maximum default likelihood and state restrictions?**
 
 To enable dynamic covenants to be introduced for a Facility, we need to think about two things:
 
@@ -24,6 +24,7 @@ This will allow picking and applying covenant conditions to the logic without th
 In an ideal world, there is an IDL (interface definition language) that facilities are able to build so that they can define the rules of business in a user friendly language. This can then be translated into simple arithmatic or comparison rules in code. 
 
 2. In code, covenants can be introduced in the form of strategies (as part of Strategy design pattern:
+
 https://en.wikipedia.org/wiki/Strategy_pattern). 
 Strategies can be introduced as external libraries/dependencies (a typical design-by-interface principle) so that the core business logic can run through all of the covenants and apply them at runtime. 
 
@@ -33,7 +34,7 @@ In a much future distributed systems world, covenant execution can be hosted as 
 <br/>
 <br/>
 
-*3*. How would you architect your solution as a production service wherein new facilities can be introduced at arbitrary points in time. Assume these facilities become available by the finance team emailing your team and describing the addition with a new set of CSVs.
+***3*. How would you architect your solution as a production service wherein new facilities can be introduced at arbitrary points in time. Assume these facilities become available by the finance team emailing your team and describing the addition with a new set of CSVs.**
 
 To make this a production quality service, the concerns around loading of facilities, covenants, loans have to seperated from business logic. Currently, the facilities are loaded in memory as part of 'stream processing context'. There is a wide range of things we can do to make this more dynamic. Some examples: 
 Enable facility CSV as an external dependency that is being 'watched' by the core service, such that when new CSV file (or version) is introduced the service hot reloads, re-reads the latest file in memory. This way whenever new CSV changes are introduced, the service will have it before processing the next loan. 
@@ -45,7 +46,7 @@ Another larger change can be to translate the facility information into a data s
    <br/>
 
 
-*4*. Your solution most likely simulates the streaming process by directly calling a method in your code to process the loans inside of a for loop. What would a REST API look like for this same service? Stakeholders using the API will need, at a minimum, to be able to request a loan be assigned to a facility, and read the funding status of a loan, as well as query the capacities remaining in facilities.
+***4*. Your solution most likely simulates the streaming process by directly calling a method in your code to process the loans inside of a for loop. What would a REST API look like for this same service? Stakeholders using the API will need, at a minimum, to be able to request a loan be assigned to a facility, and read the funding status of a loan, as well as query the capacities remaining in facilities.**
 
 The REST API will be on the domain LOAN with the following schema/signature 
 
@@ -86,7 +87,7 @@ Response:
 <br/>
 
 
-*5*. How might you improve your assignment algorithm if you were permitted to assign loans in batch rather than streaming? We are not looking for code here, but pseudo code or description of a revised algorithm appreciated.
+***5*. How might you improve your assignment algorithm if you were permitted to assign loans in batch rather than streaming? We are not looking for code here, but pseudo code or description of a revised algorithm appreciated.**
 
 Having a batch of loans (instead of a single loan) to assign, allows us to look ahead. This scenario can be leveraged to maximize yields by prioritizing loans with highest interest rates to be matched first with facilities. 
 
@@ -103,7 +104,7 @@ This will increase the possibility of using available funds in a facility for ma
  <br/>
 
 
-*6*. Discuss your solution’s runtime complexity.
+***6*. Discuss your solution’s runtime complexity.**
 
 Reading loans - `O(n)`. n number of loans in file.
 
