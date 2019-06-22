@@ -1,5 +1,13 @@
 **Solution**
 
+Simple Java project with an external library for CSV parsing.
+
+To run, simply compile and run the Main.java. 
+
+
+
+
+
 ***1*. How long did you spend working on the problem? What did you find to be the most difficult part?**
 
 
