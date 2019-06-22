@@ -81,8 +81,6 @@ public class StreamProcessor {
 			// Reduce the loan amount available to trade
 			facility.amountAvailableToLoan -= loan.amount;
 
-			// This is where a Strategy of convenants will be useful to just iterate through
-
 			// Manage loan yield calculation and assign to facility
 			float yield = this.facilityYield.getOrDefault(facility.facilityId, Float.valueOf("0"));
 			yield += this.getFacilityYieldForLoan(loan, facility);
