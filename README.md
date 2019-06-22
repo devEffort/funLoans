@@ -3,7 +3,7 @@
 *1*. How long did you spend working on the problem? What did you find to be the most difficult part?
 
 
-The first working solution took close to 4 hours. It was a combination of getting the code right as well as making sure the CSV representations figured out. 
+The first working solution took close to 4 hours. It was a combination of getting the code right as well as making sure the CSV representations were figured out. 
 
 I spent time at the beginning, to figure out the best data representation (in form of in memory data structure), so as to simplify the actual calcuations and assignment logic. For me building a simple solution (along with data representation) on a white board before coding helped. 
 
