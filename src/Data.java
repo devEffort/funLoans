@@ -53,6 +53,8 @@ class Facility implements Comparable<Facility> {
 		if (loan.amount > this.amountAvailableToLoan)
 			return new LoanStatus(false, "Funds not available.");
 
+		// This is where a Strategy of convenants will be useful to just iterate through
+
 		if (loan.defaultLikelihood > this.maxDefaultLikelihood)
 			return new LoanStatus(false, "Default likelihood mismatch.");
 
