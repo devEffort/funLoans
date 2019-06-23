@@ -123,6 +123,7 @@ Sorting facilities - `O(klgk)`. Depending on the choice of inbuilt sort, this ca
 Assigning a single loan to facilities - worst case `O(k)`. k is number of facilities. 
 
 If we remove the facilities that do not have any available funds to loan (from the sorted list), then the complexity is further reduced to be `k-t` (where `t` is number of faciities with 0 available balance). 
+Considering the number of facilities available, this however might be an premature optimization. 
 
 
 
