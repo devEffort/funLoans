@@ -120,7 +120,9 @@ Read facilities and covenants and de-normalizing - `O(n)`, n is number of facili
 
 Sorting facilities - `O(klgk)`. Depending on the choice of inbuilt sort, this can be reduced. e.g bucket or counting sort modified for floats can help.  
 
-Assigning a single loan to facilities - worst case `O(k)`. k is number of facilities
+Assigning a single loan to facilities - worst case `O(k)`. k is number of facilities. 
+
+If we remove the facilities that do not have any available funds to loan (from the sorted list), then the complexity is further reduced to be `k-t` (where `t` is number of faciities with 0 available balance). 
 
 
 
