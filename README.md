@@ -74,8 +74,9 @@ Response:
 		facilityId (id)
 		bankId	(id)
 	denialDetails: 
-		"NOT ENOUGH FUNDS" | "BANNED STATE" | "HIGH INTEREST RATE" | "DEFAULT LIKELIHOOD HIGH" 
+		"NOT ENOUGH FUNDS" | "BANNED STATE" | "HIGH INTEREST RATE" | "DEFAULT LIKELIHOOD HIGH" | ""
 
+_There is another technique to have a composition based response which either has approvalDetails or denialDetails (one of them instead of both). Such a technique is not always appreciated by SDKs and clients._  
 
 
 GET /api.affirm.com/[version]/facilities/[id]
