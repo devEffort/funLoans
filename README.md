@@ -58,7 +58,7 @@ Another larger change can be to translate the facility information into a data s
 
 The REST API will be on the domain LOAN with the following schema/signature 
 
-POST  /api.affirm.com/[version]/loans/process
+**POST  /api.affirm.com/[version]/loans/process**
 
 Data: 
 	
@@ -79,7 +79,8 @@ Response:
 _There is another technique to have a composition based response which either has approvalDetails or denialDetails (one of them instead of both). Such a technique is not always appreciated by SDKs and clients._  
 
 
-GET /api.affirm.com/[version]/facilities/[id]
+
+**GET /api.affirm.com/[version]/facilities/[id]**
 
 Response: 
 
