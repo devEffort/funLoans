@@ -62,19 +62,19 @@ POST  /api.affirm.com/[version]/loans/process
 
 Data: 
 	
-	loanId
-	loanAmount
-	interestRate
-	state
+	loanId (int)
+	loanAmount (int|double)
+	interestRate (float)
+	state (two character string representation)
 
 Response: 
 
-	loanApprovalStatus : approved | denied 
-	approvalDetails: 
-		facilityId
-		bankId		
+	loanApprovalStatus : APPROVED | DENIED 
+	approvalDetails: (structure with children fields)
+		facilityId (id)
+		bankId	(id)
 	denialDetails: 
-		"not enough funds" | "banned state" | "interest rate high" | "default likelihood too high" | 
+		"NOT ENOUGH FUNDS" | "BANNED STATE" | "HIGH INTEREST RATE" | "DEFAULT LIKELIHOOD HIGH" 
 
 
 
@@ -82,11 +82,11 @@ GET /api.affirm.com/[version]/facilities/[id]
 
 Response: 
 
-	facilityName
-	bankId
-	bankName
-	remainderBalance
-	currentYield
+	facilityName (string)
+	bankId (int)
+	bankName (string)
+	remainderBalance (int|double)
+	currentYield (int|double)
 	.. 
 
 	
